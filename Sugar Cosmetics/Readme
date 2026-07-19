@@ -1,1 +1,221 @@
+📊 Statistical Analysis of Instagram Engagement for Sugar Cosmetics Using Python
+Business Problem
+Sugar Cosmetics publishes 50,000+ Instagram posts across multiple campaign types, content formats, audience segments, and hashtag strategies. However, the marketing team lacked statistical evidence to determine which content strategies genuinely improve engagement. Relying solely on descriptive metrics could lead to ineffective content planning, inefficient marketing spend, and missed opportunities for audience growth.
+This project applies inferential statistics to validate marketing assumptions and identify the factors that significantly influence Instagram engagement.
+________________________________________
+Business Objectives
+This project was designed to answer the following business questions:
+•	Do different content types generate significantly different engagement? 
+•	Which campaign strategies lead to higher audience interaction? 
+•	Does audience emotion affect post performance? 
+•	Does engagement source influence visibility? 
+•	Does hashtag usage significantly impact engagement? 
+•	Does posting day, month, or quarter influence performance? 
+•	Are weekday and weekend posts statistically different? 
+•	Which marketing variables should be prioritized to maximize engagement? 
+________________________________________
+Project Description
+Performed an end-to-end statistical analysis on 50,000 Instagram posts using Python to evaluate the impact of 5 primary marketing variables (Post Type, Campaign Type, Audience Emotion, Engagement Source, and Hashtag Count) across 9 engagement KPIs. Applied 20+ statistical hypothesis tests, including Kruskal–Wallis, Mann–Whitney U, Chi-Square, and Bonferroni post-hoc analysis, to identify statistically significant engagement drivers and convert descriptive social media metrics into evidence-based marketing recommendations.
+________________________________________
+Dataset Summary
+Metric	Value
+Total Records	50,000 Instagram Posts
+Business Domain	Digital Marketing & Social Media Analytics
+Marketing Variables Tested	5 Primary Variables + 3 Temporal Variables
+Performance Metrics Analysed	9 KPIs
+Statistical Tests Performed	20+
+Programming Language	Python
+________________________________________
+Analytical Workflow
+•	Data Cleaning & Validation 
+•	Data Normalization (Star Schema) 
+•	Feature Engineering 
+•	Outlier Detection & Removal (IQR) 
+•	Exploratory Data Analysis 
+•	Statistical Hypothesis Testing 
+•	Bonferroni Post-hoc Comparisons 
+•	Business Interpretation 
+•	Marketing Recommendations 
+________________________________________
+Statistical Techniques Used
+•	Kruskal–Wallis H Test 
+•	Mann–Whitney U Test 
+•	Chi-Square Test of Independence 
+•	Bonferroni Post-hoc Analysis 
+•	Hedges' g Effect Size 
+•	Rank-Biserial Correlation 
+•	IQR Outlier Detection 
+________________________________________
+Key Business Findings
+1. Engagement Rate Across Marketing Variables
+Business Question
+Which marketing variables significantly influence Instagram engagement rate?
+Statistical Findings
+The Kruskal–Wallis analysis evaluated engagement rates across:
+•	Post Type 
+•	Campaign Type 
+•	Audience Emotion 
+•	Engagement Source 
+•	Hashtag Count 
+Among all variables, Hashtag Count demonstrated a statistically significant impact on engagement rate.
+Post-hoc Analysis
+Bonferroni comparisons showed:
+•	Category 1 vs Category 2: Adjusted p = 0.047 (Significant) 
+•	Category 1 vs Category 3: p = 0.615 
+•	Category 2 vs Category 3: p = 0.755 
+Business Interpretation
+The improvement in engagement rate was primarily driven by differences between Hashtag Count Categories 1 and 2, while additional hashtags beyond that level provided no statistically significant improvement.
+Business Recommendation
+Standardize optimal hashtag usage instead of maximizing hashtag quantity.
+________________________________________
+2. Campaign Strategy Performance
+Business Question
+Do different campaign strategies influence social media performance?
+Statistical Results
+Campaign type significantly affected:
+•	Comments: H = 10.917, p = 0.028 
+•	Saves: H = 7.837, p = 0.098 
+No statistically significant differences were observed for:
+•	Impressions 
+•	Reach 
+•	Likes 
+•	Shares 
+•	Profile Visits 
+•	Follows 
+Post-hoc Analysis
+For Comments:
+•	Campaign 1 vs Campaign 3: Adjusted p = 0.029 
+No campaign pairs remained significant for Saves after Bonferroni correction.
+Business Interpretation
+Campaign strategies primarily influenced deeper audience interactions (Comments and Saves) rather than visibility metrics.
+Business Recommendation
+Replicate campaign structures similar to Campaign 3, which generated significantly stronger audience conversations.
+________________________________________
+3. Audience Emotion
+Business Question
+Does audience emotion significantly affect engagement?
+Statistical Results
+Across all 9 engagement metrics, no statistically significant differences were identified.
+Business Interpretation
+Audience emotion alone does not appear to influence Instagram performance within this dataset.
+Business Recommendation
+Prioritize content quality and campaign execution over emotion-based content segmentation.
+________________________________________
+4. Engagement Source
+Business Question
+Does engagement source affect content visibility?
+Statistical Results
+Significant differences were observed for:
+•	Impressions: H = 8.611, p = 0.035 
+•	Reach: H = 6.660, p = 0.084 
+No significant differences existed for:
+•	Likes 
+•	Comments 
+•	Shares 
+•	Saves 
+•	Profile Visits 
+•	Follows 
+Post-hoc Analysis
+Impressions:
+•	Engagement Category 1 vs 4: Adjusted p = 0.042 
+•	Hedges' g = 0.034 
+Reach:
+•	Engagement Category 1 vs 4: Adjusted p = 0.081 
+•	Hedges' g = 0.031 
+Business Interpretation
+Although statistically significant, both comparisons exhibited very small practical effect sizes, suggesting limited real-world marketing impact.
+Business Recommendation
+Engagement source should be monitored but should not become the primary optimization strategy.
+________________________________________
+5. Hashtag Strategy
+Business Question
+How important is hashtag usage for engagement?
+Statistical Results
+Hashtag Count emerged as the only variable producing statistically significant differences in overall engagement rate.
+The significant improvement occurred specifically between:
+•	Category 1 and Category 2 (Adjusted p = 0.047) 
+Business Interpretation
+Moving from low to moderate hashtag usage improves engagement, while additional hashtags provide diminishing returns.
+Business Recommendation
+Develop standardized hashtag guidelines focused on optimal usage rather than maximum usage.
+________________________________________
+6. Temporal Analysis
+Business Question
+Does posting time influence Instagram performance?
+Statistical Results
+Performance was evaluated across:
+•	Day of Week 
+•	Month 
+•	Quarter 
+Across all 9 KPIs, no statistically significant differences were observed.
+Business Interpretation
+Posting schedule has minimal influence on Instagram performance.
+Business Recommendation
+Marketing teams should prioritize content quality instead of investing resources into identifying "perfect" posting times.
+________________________________________
+7. Weekday vs Weekend Performance
+Business Question
+Do weekday and weekend posts perform differently?
+Engagement Rate
+•	Mann–Whitney U = 253,472,766 
+•	p = 0.569 
+•	Rank-Biserial Correlation = 0.003 
+No statistically significant difference was observed.
+________________________________________
+Other Performance Metrics
+Statistically significant differences were detected for:
+•	Impressions (p = 0.098) 
+•	Reach (p = 0.080) 
+•	Likes (p = 0.081) 
+However,
+•	Rank-Biserial Correlation ≈ 0.01 
+indicated negligible practical impact.
+Business Interpretation
+Weekend posting offers little measurable advantage, despite isolated statistical significance.
+Business Recommendation
+Marketing teams should optimize content rather than shifting publishing schedules.
+________________________________________
+8. Content Distribution Bias
+Business Question
+Could scheduling bias explain engagement differences?
+Statistical Results
+Chi-Square tests demonstrated that:
+•	Content characteristics remained consistently distributed across 
+o	Months 
+o	Quarters 
+o	Weekdays 
+Business Interpretation
+Observed engagement differences are unlikely to be caused by scheduling bias.
+Business Recommendation
+This strengthens confidence that significant findings are driven by genuine content characteristics rather than uneven publishing behaviour.
+________________________________________
+Overall Business Impact
+Using 20+ statistical hypothesis tests across 50,000 Instagram posts, this project transformed descriptive social media analytics into statistically validated marketing insights.
+The analysis:
+•	Evaluated 8 business variables across 9 engagement KPIs. 
+•	Identified Hashtag Count as the strongest statistically significant driver of engagement, with meaningful improvement between low and moderate hashtag usage (Adjusted p = 0.047). 
+•	Demonstrated that Campaign Strategy significantly influences audience interactions through Comments (H = 10.917, p = 0.028) and Saves (H = 7.837, p = 0.098). 
+•	Confirmed that Posting Schedule (Day, Month, Quarter) has no significant impact on Instagram performance. 
+•	Showed that Weekday vs Weekend posting produces only negligible practical effects (Rank-Biserial Correlation ≈ 0.01) despite isolated statistical differences. 
+•	Eliminated Audience Emotion as a significant predictor of engagement across all performance metrics. 
+•	Validated that engagement differences are driven by content strategy rather than scheduling bias, enabling evidence-based optimization of social media campaigns. 
+________________________________________
+Business Recommendations
+•	Standardize optimal hashtag usage, as moderate hashtag counts significantly outperform lower usage while additional hashtags provide limited benefit. 
+•	Prioritize campaign designs that encourage comments and saves, as these were the only audience interaction metrics significantly influenced by campaign strategy. 
+•	Focus marketing optimization on content quality, creative execution, and hashtag strategy rather than posting schedules. 
+•	Use engagement source insights as supplementary indicators, recognizing that statistically significant visibility differences exhibit minimal practical impact. 
+•	Integrate hypothesis testing into future social media reporting to ensure campaign decisions are based on statistically validated evidence rather than descriptive metrics alone. 
+________________________________________
+Tools & Technologies
+•	Python 
+•	Pandas 
+•	NumPy 
+•	SciPy 
+•	Pingouin 
+•	Matplotlib 
+•	Seaborn 
+•	Statistical Hypothesis Testing 
+•	Data Normalization 
+•	Exploratory Data Analysis (EDA) 
 
