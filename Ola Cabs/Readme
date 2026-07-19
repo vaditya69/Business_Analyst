@@ -1,1 +1,170 @@
+📊 Statistical Analysis of Ola Ride Booking Performance Using Python
+________________________________________
+Business Problem
+Ola processes over 103,000 ride bookings, generating large volumes of operational data covering booking status, cancellations, ride completion, payment methods, vehicle types, ride distance, customer ratings, and booking values. However, operations teams often rely on descriptive dashboards without statistically validating whether observed differences are meaningful or simply random variation.
+This project applies inferential statistics to identify the operational factors that significantly influence booking outcomes and revenue, enabling data-driven improvements to ride fulfillment, cancellation reduction, and customer experience.
+________________________________________
+Business Objectives
+This project was designed to answer the following business questions:
+•	Does booking value differ across booking statuses, vehicle types, payment methods, or ride outcomes? 
+•	Does the day of the week significantly influence booking value? 
+•	Does ride distance affect booking revenue? 
+•	Which ride outcomes contribute most to overall booking value? 
+•	Are customer and driver ratings correlated? 
+•	Which operational variables are associated with one another? 
+•	Which business areas should Ola prioritize to reduce cancellations and improve revenue? 
+________________________________________
+Project Description
+Performed an end-to-end statistical analysis on 103,024 ride bookings using Python, Power BI and SQL to evaluate the impact of ride status, booking status, vehicle type, payment method, ride distance, booking day, and operational outcomes on booking performance. Applied 20+ statistical hypothesis tests, including Kruskal–Wallis, Independent Samples T-Test, Chi-Square Goodness-of-Fit, Chi-Square Test of Independence, Correlation Analysis, and Bonferroni post-hoc analysis, to distinguish statistically significant operational drivers from random variation and provide evidence-based recommendations for improving ride completion and customer experience.
+________________________________________
+Dataset Summary
+Metric	Value
+Total Ride Bookings	103,024
+Booking Value	₹56.54 Million
+Business Domain	Ride-Hailing / Mobility Analytics
+Operational Variables Tested	7+
+Statistical Tests Performed	20+
+Programming Language	Python
+________________________________________
+Analytical Workflow
+•	Data Cleaning & Validation 
+•	Feature Engineering 
+•	Ride Outcome Consolidation 
+•	DateTime Transformation 
+•	Day-of-Week Feature Extraction 
+•	Exploratory Data Analysis 
+•	Statistical Hypothesis Testing 
+•	Chi-Square Association Analysis 
+•	Correlation Analysis 
+•	Business Interpretation 
+•	Operational Recommendations 
+________________________________________
+Statistical Techniques Used
+•	Kruskal–Wallis H Test 
+•	Independent Samples T-Test 
+•	Chi-Square Goodness-of-Fit Test 
+•	Chi-Square Test of Independence 
+•	Bonferroni Post-hoc Analysis 
+•	Pearson Correlation 
+•	Spearman Correlation 
+________________________________________
+Key Business Findings
+1. Booking Value Across Operational Variables
+Business Question
+Which operational factors significantly influence booking value?
+Statistical Results
+Kruskal–Wallis testing evaluated booking value across:
+•	Booking Status 
+•	Vehicle Type 
+•	Pickup Location 
+•	Drop Location 
+•	Payment Method 
+•	Ride Status 
+•	Outcome Reason 
+Results:
+Variable	H Statistic	p-value	Conclusion
+Booking Status	0.896	0.826	Not Significant
+Vehicle Type	6.792	0.341	Not Significant
+Pickup Location	49.180	0.466	Not Significant
+Drop Location	55.867	0.233	Not Significant
+Payment Method	4.921	0.178	Not Significant
+Ride Status	8.444	0.0147	Significant
+Outcome Reason	18.842	0.064	Not Significant
+Business Interpretation
+Among all operational variables tested, Ride Status was the only factor that significantly influenced booking value, indicating that completed, cancelled, and incomplete rides generate meaningfully different revenue outcomes.
+________________________________________
+2. Ride Status Performance
+Statistical Results
+Booking Value Distribution:
+Ride Status	Booking Value	Share
+Completed	₹38.33 Million	67.80%
+Cancelled	₹15.95 Million	28.22%
+Incomplete	₹2.25 Million	3.98%
+Chi-Square Goodness-of-Fit:
+•	χ² = 6348.26 
+•	p < 0.001 
+Business Interpretation
+Completed rides account for over two-thirds of total booking revenue, while cancelled and incomplete rides collectively represent 32.2% of potential booking value, highlighting a significant opportunity for revenue recovery.
+Business Recommendation
+Reducing cancellations and incomplete rides should be a primary operational KPI due to their direct impact on realized revenue.
+________________________________________
+3. Day of Week Analysis
+Business Question
+Does booking value vary by day of the week?
+Statistical Results
+•	H = 6.761 
+•	p = 0.344 
+Business Interpretation
+Booking values remain statistically consistent throughout the week.
+Business Recommendation
+Dynamic pricing and operational planning should rely on demand forecasting rather than weekday-specific booking values.
+________________________________________
+4. Ride Distance Analysis
+Business Question
+Do longer rides generate significantly higher booking values?
+Statistical Results
+Distance Bracket Analysis:
+•	H = 0.900 
+•	p = 0.925 
+Business Interpretation
+Despite higher total revenue from certain distance brackets, booking values do not differ significantly across ride distance categories.
+Business Recommendation
+Revenue optimization should focus on increasing completed ride volume rather than targeting specific trip distances.
+________________________________________
+5. Customer vs Driver Ratings
+Business Question
+Do highly rated drivers receive higher customer ratings?
+Statistical Results
+Pearson Correlation:
+•	r = -0.00281 
+Spearman Correlation:
+•	ρ = -0.00280 
+Business Interpretation
+Virtually no correlation exists between driver ratings and customer ratings.
+Business Recommendation
+Driver performance should be evaluated using multiple operational KPIs rather than ratings alone.
+________________________________________
+6. Operational Associations
+Business Question
+Which operational variables are associated with one another?
+Chi-Square Results
+Most variable pairs demonstrated very weak associations.
+Examples:
+Variable Pair	χ²	Cramer's V	Association
+Booking Status ↔ Pickup Location	170.44	0.023	No Meaningful Association
+Pickup ↔ Drop Location	2466.38	0.022	Weak
+Booking Status ↔ Vehicle Type	Weak	Low Effect Size	No
+Booking Status ↔ Payment Method	Weak	Low Effect Size	No
+Business Interpretation
+Operational variables are largely independent, indicating that cancellations and booking outcomes are unlikely to be explained by location, payment method, or vehicle type alone.
+________________________________________
+Overall Business Impact
+Using 20+ statistical hypothesis tests across 103,024 ride bookings, this project transformed operational ride data into statistically validated business insights.
+The analysis:
+•	Evaluated 7+ operational variables affecting booking performance. 
+•	Identified Ride Status as the only statistically significant driver of booking value (H = 8.444, p = 0.0147). 
+•	Quantified that Completed rides generated ₹38.33 million (67.8%) of the ₹56.54 million total booking value, while cancelled and incomplete rides represented 32.2% of unrealized revenue. 
+•	Confirmed that ride distance, payment method, vehicle type, booking status, pickup location, and day of week did not significantly influence booking value. 
+•	Demonstrated near-zero correlation between customer and driver ratings (r ≈ -0.003), indicating ratings alone are insufficient for performance evaluation. 
+•	Found no meaningful operational associations among most categorical variables, suggesting improvements should focus on ride execution and cancellation reduction rather than customer segmentation. 
+________________________________________
+Business Recommendations
+•	Prioritize reducing ride cancellations and incomplete rides, as they account for over ₹18.2 million (32.2%) of total booking value. 
+•	Track Ride Completion Rate as the primary operational KPI because it is the only statistically significant determinant of booking revenue. 
+•	Focus operational improvements on dispatch efficiency, driver availability, and ride execution instead of payment methods or vehicle allocation. 
+•	Develop driver performance scorecards using multiple operational metrics rather than relying solely on customer ratings. 
+•	Continue validating operational initiatives using statistical hypothesis testing to ensure observed improvements are genuinely significant. 
+________________________________________
+Tools & Technologies
+•	Python 
+•	Pandas 
+•	NumPy 
+•	SciPy 
+•	Pingouin 
+•	Matplotlib 
+•	Seaborn 
+•	Statistical Hypothesis Testing 
+•	Exploratory Data Analysis (EDA) 
+•	Feature Engineering
+
 
